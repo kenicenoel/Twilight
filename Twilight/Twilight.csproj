@@ -38,9 +38,20 @@
     <ApplicationIcon>bulb.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.6.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.6.1\lib\net40\Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,6 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ToggleDarkTheme.cs" />
+    <Compile Include="ToggleLightTheme.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,13 +103,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Service\InstallService.bat" />
-    <None Include="Service\Twilight.exe.config" />
-    <None Include="Service\Twilight.Service.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -113,21 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="bulb.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Service\Common.Logging.Core.dll" />
-    <Content Include="Service\Common.Logging.Core.pdb" />
-    <Resource Include="Service\Common.Logging.Core.xml" />
-    <Content Include="Service\Common.Logging.dll" />
-    <Content Include="Service\Common.Logging.pdb" />
-    <Resource Include="Service\Common.Logging.xml" />
-    <Content Include="Service\Quartz.dll" />
-    <Content Include="Service\Quartz.pdb" />
-    <Resource Include="Service\Quartz.xml" />
-    <Content Include="Service\Twilight.exe" />
-    <Content Include="Service\Twilight.pdb" />
-    <Content Include="Service\Twilight.Service.exe" />
-    <Content Include="Service\Twilight.Service.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
