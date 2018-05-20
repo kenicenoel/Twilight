@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>bulb.ico</ApplicationIcon>
+    <ApplicationIcon>twilight.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
@@ -48,6 +48,7 @@
       <HintPath>..\packages\Quartz.2.6.1\lib\net40\Quartz.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceProcess" />
@@ -70,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomControls\ImageButton.cs" />
     <Compile Include="ToggleDarkTheme.cs" />
     <Compile Include="ToggleLightTheme.cs" />
     <Page Include="MainWindow.xaml">
@@ -116,17 +118,36 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\bulb.png" />
+    <Resource Include="Resources\Icons\bulb.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\ui-04.png" />
+    <Resource Include="Resources\Icons\ui-04.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\ui-04-off.png" />
-    <Resource Include="Resources\Images\ui-04-on.png" />
+    <Resource Include="Resources\Icons\ui-04-off.png" />
+    <Resource Include="Resources\Icons\ui-04-on.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bulb.ico" />
+    <Resource Include="Resources\Icons\time-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\small-delete.png" />
+    <Resource Include="Resources\Icons\small-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Backgrounds\misty_overlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\twilight_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\twilight_logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="twilight.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\twilight_icon_white%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

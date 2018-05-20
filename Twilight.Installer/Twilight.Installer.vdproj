@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3AA61072C4214EF0AE2DB3709637A93A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7877262AA91FA29A873D93E848DEAFD6"
         "OwnerKey" = "8:_A7DA18B01DA348978404042E37BC7803"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,12 +52,6 @@
         "Entry"
         {
         "MsmKey" = "8:_A7DA18B01DA348978404042E37BC7803"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C1CE3627C10D4D4B800F8AD58E9EF86D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -65,12 +65,6 @@
         {
         "MsmKey" = "8:_C1E00A01414B6E7E9DC7AA367BB09A4A"
         "OwnerKey" = "8:_7877262AA91FA29A873D93E848DEAFD6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2404595089BB90C87E1C3C8022C81E7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -97,6 +91,12 @@
         "OwnerKey" = "8:_263A2F90A162EB3108112472C5A772AB"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2404595089BB90C87E1C3C8022C81E7E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -115,6 +115,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -131,6 +147,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -278,6 +310,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3AA61072C4214EF0AE2DB3709637A93A"
+            {
+            "SourcePath" = "8:..\\Twilight\\twilight.ico"
+            "TargetName" = "8:twilight.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_0ABD45A455204A22B8EF980DDAD1D9CA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7877262AA91FA29A873D93E848DEAFD6"
             {
             "AssemblyRegister" = "3:1"
@@ -307,26 +359,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C1CE3627C10D4D4B800F8AD58E9EF86D"
-            {
-            "SourcePath" = "8:..\\Twilight\\bulb.ico"
-            "TargetName" = "8:bulb.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_0ABD45A455204A22B8EF980DDAD1D9CA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C1E00A01414B6E7E9DC7AA367BB09A4A"
@@ -417,7 +449,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Twilight"
         "ProductCode" = "8:{B409877E-6C52-4E21-B747-12C68F6B8972}"
-        "PackageCode" = "8:{A04F54F1-D168-47C8-94DD-BBEB54118A69}"
+        "PackageCode" = "8:{B56B96A9-2B3A-464B-9260-CC29F8A90DB8}"
         "UpgradeCode" = "8:{A23F8091-26F8-4EE3-9754-EFBAAD07AD91}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -432,9 +464,9 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:Kenice Noel"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:Light-Dark theme changer for Windows 10."
+        "ARPCOMMENTS" = "8:Automatically changes the Windows 10 theme based on time of day "
         "ARPURLINFOABOUT" = "8:kenicenoel.com"
-        "ARPPRODUCTICON" = "8:_C1CE3627C10D4D4B800F8AD58E9EF86D"
+        "ARPPRODUCTICON" = "8:_3AA61072C4214EF0AE2DB3709637A93A"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -537,6 +569,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1EF4F4C4B3B54AD1BE468AD72E6C6482"
+            {
+            "Name" = "8:Twilight"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_A7DA18B01DA348978404042E37BC7803"
+            "Folder" = "8:_01C2080C885C462E9044F52AC7583033"
+            "WorkingFolder" = "8:_0ABD45A455204A22B8EF980DDAD1D9CA"
+            "Icon" = "8:_3AA61072C4214EF0AE2DB3709637A93A"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F86B591CC52A47248ECB3E94DA568DCF"
+            {
+            "Name" = "8:Twilight"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_A7DA18B01DA348978404042E37BC7803"
+            "Folder" = "8:_272FF2E84DA74FB19BDF74E3A888DF3C"
+            "WorkingFolder" = "8:_0ABD45A455204A22B8EF980DDAD1D9CA"
+            "Icon" = "8:_3AA61072C4214EF0AE2DB3709637A93A"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -938,7 +998,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A7DA18B01DA348978404042E37BC7803"
             {
-            "SourcePath" = "8:..\\Twilight\\obj\\Release\\Twilight.exe"
+            "SourcePath" = "8:..\\Twilight\\obj\\Debug\\Twilight.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0ABD45A455204A22B8EF980DDAD1D9CA"
