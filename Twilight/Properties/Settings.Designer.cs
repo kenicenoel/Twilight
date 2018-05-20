@@ -26,12 +26,12 @@ namespace Twilight.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ServiceInstalled {
+        public bool AutoThemeSwitch {
             get {
-                return ((bool)(this["ServiceInstalled"]));
+                return ((bool)(this["AutoThemeSwitch"]));
             }
             set {
-                this["ServiceInstalled"] = value;
+                this["AutoThemeSwitch"] = value;
             }
         }
     }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Twilight"
         mc:Ignorable="d"
         Icon="Resources/Images/bulb.png"
-        Title="Twilight" Height="450" Width="800">
+        Title="Twilight" Height="450" Width="800" StateChanged="Window_StateChanged">
     <Window.Resources>
         <Image x:Key="Off" Source="Resources/Images/ui-04-off.png" Width="40" />
         <Image x:Key="On" Source="Resources/Images/ui-04-on.png" Width="40" />
@@ -22,7 +22,7 @@
                 <Image Name="ToggleIcon" Source="Resources/Images/ui-04-off.png" Width="40" VerticalAlignment="Bottom"  />
             </Button>
         </StackPanel>
-        <Label Name="ServiceStatusLabel" Content="Twilight service not installed." Margin="5 165"/>
+        <Label Name="ServiceStatusLabel" Content="Minimize to system tray for auto-change." Margin="5 165"/>
 
     </StackPanel>
 </Window>

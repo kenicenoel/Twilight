@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twilight", "Twilight\Twilight.csproj", "{CFBDFDAE-B021-41C1-931A-9C34E60025C2}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Twilight.Installer", "Twilight.Installer\Twilight.Installer.vdproj", "{1FCFCEE0-5359-44F5-93FE-53ACEFDD7280}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{CFBDFDAE-B021-41C1-931A-9C34E60025C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFBDFDAE-B021-41C1-931A-9C34E60025C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFBDFDAE-B021-41C1-931A-9C34E60025C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FCFCEE0-5359-44F5-93FE-53ACEFDD7280}.Debug|Any CPU.ActiveCfg = Debug
+		{1FCFCEE0-5359-44F5-93FE-53ACEFDD7280}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
