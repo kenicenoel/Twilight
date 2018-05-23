@@ -3,26 +3,83 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Twilight"
         mc:Ignorable="d"
-        Icon="Resources/Images/bulb.png"
-        Title="Twilight" Height="450" Width="800" StateChanged="Window_StateChanged">
+        Icon="Resources/Icons/twilight_icon@2x.png"
+        Title="Twilight" Height="450" Width="800" StateChanged="Window_StateChanged" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" MouseDown="Window_MouseDown">
     <Window.Resources>
-        <Image x:Key="Off" Source="Resources/Images/ui-04-off.png" Width="40" />
-        <Image x:Key="On" Source="Resources/Images/ui-04-on.png" Width="40" />
+        <Image x:Key="Off" Source="Resources/Icons/ui-04-off.png" Width="40" />
+        <Image x:Key="On" Source="Resources/Icons/ui-04-on.png" Width="40" />
     </Window.Resources>
-    <StackPanel Orientation="Vertical" Background="#f0f0f0">
-        <StackPanel Orientation="Horizontal">
-            <Image Source="Resources/Images/bulb.png"  Width="40" />
-            <Label x:Name="Title" Content="Twilight" FontSize="30" FontFamily="Inter UI"/>
+    <Window.Background>
+       <ImageBrush ImageSource="Resources/Backgrounds/misty_overlay.png"></ImageBrush>
+    </Window.Background>
+    
+    <Grid Height="450">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" ></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="4"  Margin="0,0,0,10">
+            <Label x:Name="Title" Content="Twilight" FontSize="11"  
+                   FontFamily="Inter UI" VerticalContentAlignment="Center" 
+                   Foreground="Black"
+                   Margin="10 0"
+                   />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0 70" Width="Auto" HorizontalAlignment="Stretch">
-            <Label Content="Toggle Automatic theme change" FontFamily="Inter UI Medium" FontSize="15" Margin="5 0"></Label>
-            <Button Name="ToggleAutoThemeButton" Background="Transparent" Style="{x:Null}" Margin="490 0" BorderThickness="0" Click="ToggleAutoThemeButton_Click">
-                <Image Name="ToggleIcon" Source="Resources/Images/ui-04-off.png" Width="40" VerticalAlignment="Bottom"  />
+
+        <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+            <Button Name="MinimizeButton" 
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    Click="MinimizeButton_OnClick" 
+                   >
+                <Image Source="Resources/Icons/small-delete.png" Width="27"></Image>
+            </Button>
+            <Button Name="CloseButton"
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    Click="CloseButton_OnClick" 
+                   >
+                <Image Source="Resources/Icons/small-remove.png" Height="27"></Image>
             </Button>
         </StackPanel>
-        <Label Name="ServiceStatusLabel" Content="Minimize to system tray for auto-change." Margin="5 165"/>
 
-    </StackPanel>
+
+        <Label Grid.Row="1" 
+               Grid.ColumnSpan="3" 
+               Grid.Column="0" 
+               Content="Switch theme automatically" 
+               Margin="10 50" 
+               FontFamily="Inter UI" FontSize="18"></Label>
+        
+        <Button Name="ToggleAutoThemeButton" 
+                Background="Transparent" 
+                Style="{x:Null}" 
+                BorderThickness="0" 
+                Grid.Row="1" Grid.Column="3" 
+                Click="ToggleAutoThemeButton_Click" 
+                HorizontalAlignment="Right" 
+                Margin="10 0" 
+                Height="30">
+            <Image Name="ToggleIcon" 
+                   Source="Resources/Icons/ui-04-off.png" 
+                   Width="40" 
+                   VerticalAlignment="Center"  />
+
+        </Button>
+
+       <Image Source="Resources/Icons/twilight_logo@2x.png" Grid.Row="3" Grid.Column="3" Margin="10 10"></Image>
+    </Grid>
 </Window>
+
+
+

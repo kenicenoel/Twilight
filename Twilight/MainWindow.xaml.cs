@@ -1,9 +1,12 @@
-﻿using Quartz;
-using Quartz.Impl;
-using System;
-using System.Diagnostics;
-using System.Linq;
+﻿using System;
+using System.Drawing;
 using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Input;
+using Quartz;
+using Quartz.Impl;
+using Twilight.Properties;
+using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 
 namespace Twilight
 {
@@ -12,17 +15,17 @@ namespace Twilight
     /// </summary>
     public partial class MainWindow : Window
     {
-        private object on;
-        private object off;
-        private IScheduler scheduler;
-        private System.Windows.Forms.NotifyIcon MyNotifyIcon;
+        private object _on;
+        private object _off;
+        private IScheduler _scheduler;
+        private NotifyIcon _myNotifyIcon;
         public MainWindow()
         {
             InitializeComponent();
-             on = FindResource("On");
-             off = FindResource("Off");
-            ToggleAutoThemeButton.Content = Properties.Settings.Default.AutoThemeSwitch == true ? on : off;
-            if (Properties.Settings.Default.AutoThemeSwitch)
+             _on = FindResource("On");
+             _off = FindResource("Off");
+            ToggleAutoThemeButton.Content = Settings.Default.AutoThemeSwitch ? _on : _off;
+            if (Settings.Default.AutoThemeSwitch)
             {
                 Console.WriteLine("Auto switch enabled. Setting up...");
                 SetupScheduler();
@@ -35,23 +38,24 @@ namespace Twilight
 
         private void SetupMinimizeToTray()
         {
-            MyNotifyIcon = new System.Windows.Forms.NotifyIcon();
-            MyNotifyIcon.Icon = new System.Drawing.Icon(
-                            @"../../bulb.ico");
-            MyNotifyIcon.MouseDoubleClick +=
-                new System.Windows.Forms.MouseEventHandler
-                    (MyNotifyIcon_MouseDoubleClick);
+            _myNotifyIcon = new NotifyIcon
+            {
+                Icon = new Icon(
+                            @"../../twilight.ico")
+            };
+            _myNotifyIcon.MouseDoubleClick +=
+                MyNotifyIcon_MouseDoubleClick;
         }
 
-        void MyNotifyIcon_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        void MyNotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            this.WindowState = WindowState.Normal;
+            WindowState = WindowState.Normal;
         }
 
         private void SetupScheduler()
         {
-            scheduler = StdSchedulerFactory.GetDefaultScheduler();
-            scheduler.Start();
+            _scheduler = StdSchedulerFactory.GetDefaultScheduler();
+            _scheduler.Start();
 
             var jobB = JobBuilder.Create<ToggleDarkTheme>().Build();
             var jobA = JobBuilder.Create<ToggleLightTheme>().Build();
@@ -73,25 +77,21 @@ namespace Twilight
                     .RepeatForever())
                    .Build();
 
-            scheduler.ScheduleJob(jobA, morningTrigger);
-            scheduler.ScheduleJob(jobB, eveningTrigger);
+            _scheduler.ScheduleJob(jobA, morningTrigger);
+            _scheduler.ScheduleJob(jobB, eveningTrigger);
 
-            if (scheduler.IsStarted) Console.WriteLine("Scheduler has been started");
+            if (_scheduler.IsStarted) Console.WriteLine("Scheduler has been started");
         }
 
         private void ToggleAutoThemeButton_Click(object sender, RoutedEventArgs e)
         {
             
-            ToggleAutoThemeButton.Content =  ToggleAutoThemeButton.Content == off ? on : off;
-            Properties.Settings.Default.AutoThemeSwitch = ToggleAutoThemeButton.Content == off ? false : true;
-            Properties.Settings.Default.Save();
-            if (!Properties.Settings.Default.AutoThemeSwitch)
+            ToggleAutoThemeButton.Content =  ToggleAutoThemeButton.Content == _off ? _on : _off;
+            Settings.Default.AutoThemeSwitch = ToggleAutoThemeButton.Content == _off ? false : true;
+            Settings.Default.Save();
+            if (!Settings.Default.AutoThemeSwitch)
             {
-
-                if (scheduler != null)
-                {
-                    scheduler.Shutdown();
-                }
+                _scheduler?.Shutdown();
             }
             else
             {
@@ -101,19 +101,35 @@ namespace Twilight
 
         private void Window_StateChanged(object sender, EventArgs e)
         {
-            if (this.WindowState == WindowState.Minimized)
+            if (WindowState == WindowState.Minimized)
             {
-                this.ShowInTaskbar = false;
-                MyNotifyIcon.BalloonTipTitle = "Twilight";
-                MyNotifyIcon.BalloonTipText = "We're gonna stay tucked away here to ensure that your theme changes automagically.";
-                MyNotifyIcon.ShowBalloonTip(600);
-                MyNotifyIcon.Visible = true;
+                ShowInTaskbar = false;
+                _myNotifyIcon.BalloonTipTitle = "Twilight";
+                _myNotifyIcon.BalloonTipText = "We're gonna stay tucked away here to ensure that your theme changes automagically.";
+                _myNotifyIcon.ShowBalloonTip(600);
+                _myNotifyIcon.Visible = true;
             }
-            else if (this.WindowState == WindowState.Normal)
+            else if (WindowState == WindowState.Normal)
             {
-                MyNotifyIcon.Visible = false;
-                this.ShowInTaskbar = true;
+                _myNotifyIcon.Visible = false;
+                ShowInTaskbar = true;
             }
+        }
+
+        private void CloseButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void MinimizeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
         }
     }
 }
