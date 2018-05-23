@@ -102,17 +102,17 @@ namespace Twilight
         {
             if (WindowState == WindowState.Minimized)
             {
-                ShowInTaskbar = false;
-                _myNotifyIcon.BalloonTipTitle = "Twilight";
-                _myNotifyIcon.BalloonTipText = "We're gonna stay tucked away here to ensure that your theme changes automagically.";
-                _myNotifyIcon.ShowBalloonTip(600);
                 _myNotifyIcon.Visible = true;
+                ShowInTaskbar = false;
+                _myNotifyIcon.ShowBalloonTip(400, "Twilight", "We're gonna stay tucked away here to ensure that your theme changes automagically.", ToolTipIcon.Info);
+                
             }
-//            else if (WindowState == WindowState.Normal)
-//            {
-//                _myNotifyIcon.Visible = false;
-//                ShowInTaskbar = true;
-//            }
+            
+            else
+            {
+                _myNotifyIcon.Visible = false;
+                ShowInTaskbar = true;
+            }
         }
 
         private void CloseButton_OnClick(object sender, RoutedEventArgs e)

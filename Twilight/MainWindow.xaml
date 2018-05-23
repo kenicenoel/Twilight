@@ -57,7 +57,7 @@
         <Label Grid.Row="1" 
                Grid.ColumnSpan="3" 
                Grid.Column="0" 
-               Content="Switch theme automatically" 
+               Content="Automatically change to light/dark theme" 
                Margin="10 50" 
                FontFamily="Inter UI" FontSize="18"></Label>
         
