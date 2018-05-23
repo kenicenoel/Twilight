@@ -43,13 +43,12 @@ namespace Twilight
                 Icon = new Icon(
                             @"../../twilight.ico")
             };
-            _myNotifyIcon.MouseDoubleClick +=
-                MyNotifyIcon_MouseDoubleClick;
-        }
-
-        void MyNotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            WindowState = WindowState.Normal;
+                _myNotifyIcon.DoubleClick += 
+                delegate(object sender, EventArgs args)
+                {
+                    this.Show();
+                    this.WindowState = WindowState.Normal;
+                };
         }
 
         private void SetupScheduler()
@@ -109,11 +108,11 @@ namespace Twilight
                 _myNotifyIcon.ShowBalloonTip(600);
                 _myNotifyIcon.Visible = true;
             }
-            else if (WindowState == WindowState.Normal)
-            {
-                _myNotifyIcon.Visible = false;
-                ShowInTaskbar = true;
-            }
+//            else if (WindowState == WindowState.Normal)
+//            {
+//                _myNotifyIcon.Visible = false;
+//                ShowInTaskbar = true;
+//            }
         }
 
         private void CloseButton_OnClick(object sender, RoutedEventArgs e)
